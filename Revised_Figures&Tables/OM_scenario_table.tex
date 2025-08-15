@@ -1,0 +1,32 @@
+\begin{table}[H]
+\centering
+\caption{Summary of operating models (OMs) and estimation models (EMs) with different random-effects structures and bias correction scenarios. Each OM includes four bias correction scenarios (ON or OFF for process and observation, respectively).  Note that a shared AR(1)-year autocorrelation parameter ($\rho_y$) is used for both recruitment and $NAA$ random effects.}
+\label{OM_scenario_table}
+\begin{scriptsize} % Adjust the font size to scriptsize
+\begin{tabular}{p{3cm} p{3cm} p{3.5cm} p{3.5cm}} % Adjusted column widths
+\toprule
+\textbf{Random Effects Structure} & \textbf{Parameters} & \textbf{Bias-Correct (Proc.)} & \textbf{Bias-Correct (Obs.)} \\
+\midrule
+\textbf{Rec (IID)} & $\sigma_{Rec}$ & ON & ON \\
+                         &                                          & OFF & ON \\
+                         &                                          & ON  & OFF \\
+                         &                                          & OFF & OFF \\
+\midrule
+\textbf{Rec (AR1\(_y\))} & $\sigma_{Rec}, \rho_y$ & ON & ON \\
+                         &                                          & OFF & ON \\
+                         &                                          & ON  & OFF \\
+                         &                                          & OFF & OFF \\
+\midrule
+\textbf{Rec+NAA (IID)} & $\sigma_{Rec}, \sigma_{NAA}$ & ON & ON \\
+                         &                                          & OFF & ON \\
+                         &                                          & ON  & OFF \\
+                         &                                          & OFF & OFF \\
+\midrule
+\textbf{Rec+NAA (AR1\(_y\))} & $\sigma_{Rec}, \sigma_{NAA}, \rho_y$ & ON & ON \\
+                         &                                          & OFF & ON \\
+                         &                                          & ON  & OFF \\
+                         &                                          & OFF & OFF \\
+\bottomrule
+\end{tabular}
+\end{scriptsize}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering
+\caption{Model configuration for GB Yellowtail Flounder, GoM Haddock, and Atlantic Mackerel. Note: The age composition likelihoods are defined as follows. `Dirichlet-miss0' uses the Dirichlet distribution where zero observations are treated as missing. `Logistic-normal-miss0' uses the logistic-normal distribution, also treating zeros as missing. `Logistic-normal-ar1-miss0' extends the logistic-normal model with a first-order autoregressive (AR1) error structure to account for temporal correlation.}
+\label{model_config_table}
+\begin{scriptsize} 
+\begin{tabular}{p{4cm} p{3.5cm} p{3.5cm} p{3.5cm}} % Adjust column widths
+\toprule
+\textbf{Parameter} & \textbf{Flounder} & \textbf{Haddock} & \textbf{Mackerel} \\
+\midrule
+\textbf{Fleet Catch} & & & \\
+\textbf{Period} & 1973-2022 & 1977-2018 & 1968-2019 \\
+\textbf{Selectivity form} & Logistic & Age-specific & Age-specific \\
+\textbf{Age comp. likelihood} & Dirichlet-miss0 & Logistic-normal-miss0 & Logistic-normal-ar1-miss0 \\
+ & & & \\
+\textbf{Survey Indices} & & & \\
+\textbf{Period} & 1. 1973-2022 & 1. 1977-2018 & 1. 1979-2019 \\
+ & 2. 1973-2022 & 2. 1977-2018 & 2. 2009-2019 \\
+ & 3. 1987-2022 & & 3. 1974-2008 \\
+\textbf{Selectivity form} & Logistic & Age-specific & Age-specific \\
+\textbf{Age comp. likelihood} & Dirichlet-miss0 & Logistic-normal-miss0 & Logistic-normal-ar1-miss0 \\
+\bottomrule
+\end{tabular}
+\end{scriptsize}
+\end{table}

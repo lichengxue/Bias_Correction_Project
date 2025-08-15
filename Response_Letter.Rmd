@@ -1,0 +1,258 @@
+---
+title: "Response to Reviewers for Manuscript CJFAS-2025-0093"
+subtitle: "Evaluating the impact of log-normal bias-correction on a state-space stock assessment model"
+author: "Chengxue Li et al."
+date: "August 8, 2025"
+output:
+  pdf_document:
+    toc: true
+    latex_engine: xelatex
+    number_sections: false
+geometry: margin=1in
+---
+
+We thank the Associate Editor and the four reviewers for their time and for providing thoughtful and constructive comments on our manuscript. We have carefully considered all suggestions and have revised the manuscript accordingly. Below, we provide a point-by-point response to the issues raised.
+
+\pagebreak
+
+# Response to the Associate Editor
+
+> **AE Comment:** Multiple reviewers mention sloppy notation, question the meaning/use of “<<” in Line 105, and have concerns about dropping unconverged runs and simulating again until 50 runs were converged for each scenario. Also, there is general consensus that you should discuss your convergence criteria. Some suggestions for improving Figures and Tables are provided. Two reviewers mention Aldrin et al. (2020), which seems relevant and the authors should discuss relative to differences in finding/guidance. Reviewer 4 raises a good conceptual question about section 2.3, please expand on this point.
+
+**Author's Response:**
+*[Your detailed response here... We have addressed the notation inconsistencies throughout the manuscript, clarified the language on Line 105, and have added a detailed description of our convergence criteria and handling of non-converged simulation runs in the Methods section...]*
+
+***
+
+> **AE Comment:** Two reviewers mention Aldrin et al. (2020), which seems relevant and the authors should discuss relative to differences in finding/guidance. [cite: 111, 114]
+
+**Author's Response:**
+*[Your detailed response here... We thank the reviewers for this suggestion and have now included a discussion of Aldrin et al. (2020) in Section 4.2...]*
+
+***
+
+> **AE Comment:** Reviewer 4 raises a good conceptual question about section 2.3, please expand on this point.
+
+**Author's Response:**
+*[Your detailed response here... We have expanded Section 2.3 to address the conceptual motivation for applying bias-correction to observations...]*
+
+***
+
+> **AE Comment:** Figures S10+S11 – Are you isolating the effect of observation error or process error by setting the CV so low? Or do you mean that you are minimizing the effect of observation error?
+
+**Author's Response:**
+*Yes, we did this additional simulations to isolate the effect of observation error*
+
+***
+
+> **AE Comment:** Primary finding is that biased estimation of variance parameters, primarily sigmaNAA, produces bias in model estimated SSB and NAA when bias correction is on. But this is not highlighted in the Abstract and should be.
+
+**Author's Response:**
+*[Your detailed response here... This is an excellent point. We have revised the Abstract to explicitly highlight this key finding...]*
+
+***
+
+> **AE Comment:** Comment on the role that the ar1_y parameter might contribute to the bias resulting for bias correction. The value is quite large for flounder, nearly random walk, and this is the one stock with the strongest contraindication for bias correction.
+
+**Author's Response:**
+*[Your detailed response here... We have added a paragraph to the Discussion addressing the potential role of the AR1 parameter in the flounder case...]*
+
+***
+
+> **AE Comment:** The paragraph on Lines 296-307 was not a well developed line of analysis, not mentioned in the methods... At present, the ‘conclusion’ that data quality and quantity are less influential is more of a hypothesis...
+
+**Author's Response:**
+*[Your detailed response here... We agree that this section was underdeveloped. We have removed the paragraph and instead suggest this as an area for future research in the Discussion...]*
+
+***
+
+> **AE Comment:** In Lines 310-311, the authors state “In the absence of strong evidence in support of bias correction…” – what would such evidence look like? It would be good to give readers some insight on what they should be looking for.
+
+**Author's Response:**
+*[Your detailed response here... We have expanded on this point in the conclusion to provide examples of what such evidence might entail...]*
+
+\pagebreak
+
+# Response to Reviewer 1
+
+*This reviewer's comments were synthesized from the uploaded PDF "logNormalBiaCorrection.pdf".*
+
+## Major Comments
+
+> **Reviewer Comment 1.1:** I'm not the biggest fan of the presented plots. [cite_start]You have 4 cases for each random effects structure... but all of the figures only use BC-ON and BC-OFF but it's not clear how things are divided... I think the x-axis should include all 4 cases in all the relevant plots. [cite: 4, 5, 6, 7, 8]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> [cite_start]**Reviewer Comment 1.2:** This is really more of a question but I'm wondering if you've thought about the fact that SAM and some other state-space stock assessment models fit directly to the log numbers at age rather than aggregate indices and proportions, do you think this would impact the results of bias correction on observations differently from what was seen here on WHAM? [cite: 11]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+## Minor Comments
+
+> [cite_start]**Reviewer Comment 1.3:** Change N in Equations 2, 3, and 6 to use a different symbol... to better distinguish between the numbers at age matrix and normal distribution. [cite: 13]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> [cite_start]**Reviewer Comment 1.4:** In Equation 8 the numerator should be $\hat{\theta}_{i,y}$. [cite: 14]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 1.5:** Table 1, I am not entirely sure what Dirichlet-miss0, etc. mean for the age composition likelihood. This should be either better explained in the text or table caption. [cite_start]Might also be worth expanding Age Comp. somewhere at least once. [cite: 17, 18, 20]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 1.6:** On lines 110 and 111, you use $-\sigma_{\overline{C}_{y,i}}^{2}$ but in Eq. [cite_start]7 and the beginning of line 110 you use $-\sigma_{C_{y,i}}^{2}$, so that should be made consistent. [cite: 24, 25]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 1.7:** I think Figure S1 would be better as a Table listing the proportions of EMs that converged. [cite_start]It's too hard to tell what the values are from a bar plot. [cite: 26, 27]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> [cite_start]**Reviewer Comment 1.8:** Figure S13 caption, typo, should be estimates, not estiamtes. [cite: 33]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+\pagebreak
+
+# Response to Reviewer 2
+
+*This reviewer's comments were synthesized from the uploaded PDF "CJFAS_0093_Review.pdf".*
+
+## Major Comments
+
+> **Reviewer Comment 2.1:** Only 50 simulation replicates? This seems quite low. [cite_start]I hope there is more compute power available at the NEFSC to increase this number to at least 100! [cite: 137]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.2:** Lines 114-122. I need a few more details here... Please re-write this paragraph to make it explicitly clear what was done. [cite_start]Also best to use consistent terminology throughout for the OM structure and the bias correction... [cite: 138, 141, 142]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.3:** If one EM of the four did not converge you threw out that simulated iteration in favor of another that resulted in the four EMs converging? Could you not be biasing your results here? ... I see you report this perhaps in Figure S1. [cite_start]I would argue bring this into main text. [cite: 144, 145, 148]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+## Minor Comments
+
+> [cite_start]**Reviewer Comment 2.4:** Is the negative bias in the variance terms not simply the bias associated with not using REML? [cite: 150]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> [cite_start]**Reviewer Comment 2.5:** Line 29. Consider using alternative language to "noise" throughout. [cite: 153]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.6:** Equation 7. What is the meaning of i subscript here? [cite_start]Is it needed for this paper? [cite: 157]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.7:** Methods. [cite_start]Please list your standards for convergence. [cite: 162]
+
+**Author's response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.8:** Figure S1. [cite_start]What are the meaning of the colors here? [cite: 165]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 2.9:** Line 200. Please provide citation for your rule of thumb. [cite_start]My old rule of thumb was 3 units from Burnham and Anderson (2002). [cite: 170, 171]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+\pagebreak
+
+# Response to Reviewer 3
+
+> **Reviewer Comment 3.1:** This paper addresses an important question: bias-correction. I have a few concerns... I do agree that bias-correction should be applied to observations, as in Section 2.3. Eqn (7) is saying that the observed catches C are biased estimates of the modelled catches $\hat{C}$. The authors should justify why this bias occurs. Further, from a theoretical statistical standpoint the maximum likelihood estimator is invariant to transformation of the data... For normally distributed data (log(C)), nobody would suggest a bias correction.
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 3.2:** My next point is similar, but applies to Section 2.2. I do not agree that there should be an operating model without bias correction. If the expectation of $\exp(\epsilon_1)$ in eqn (1) is not 1, it affects the interpretation of the recruitment function $f(SSB)$.
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 3.3:** The number of simulation replica is low only 50.
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 3.4:** The paper is in general clearly written, but a bit sloppy written at some places: a. Line 104: “larger than” followed by “neq”? b. In eqn (8), is it median over y? Also, first it says $\theta_{i,y}$, and right after is says $\theta(i,y)$.
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+\pagebreak
+
+# Response to Reviewer 4
+
+*This reviewer's comments were synthesized from the uploaded PDF "ReviewerCommentsBiasCorrection.pdf" and the Associate Editor's summary.*
+
+> **Reviewer Comment 4.1:** The authors conclude that using bias-correction may do more harm than the potential gain... This conclusion is based on the effect of BC of the process error for age>1... but mainly only for one of the three fish stocks. [cite_start]I think one out of three is not enough evidence for a strong conclusion. [cite: 39, 40, 41]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 4.2:** The measure for relative error takes first the median over years, which ignores variance. [cite_start]I would prefer a measure that takes into account the variance in the first step as well. [cite: 43, 45]
+
+**Author's Response:**
+*[Your detailed response here...]*
+
+***
+
+> **Reviewer Comment 4.3:** (Summarized by AE) Reviewer 4 raises a good conceptual question about section 2.3, please expand on this point.
+
+**Author's Response:**
+*[Your detailed response here... We have expanded Section 2.3 to better explain the motivation and assumptions behind applying bias correction to observation error...]*
