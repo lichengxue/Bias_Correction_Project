@@ -153,7 +153,7 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{cjfas2.bst}
-\usepackage{bookmark}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -182,7 +182,8 @@ Water Street, Woods Hole, MA 02543 USA
 
 \pagebreak
 
-\section*{Abstract}\label{abstract}
+\hypertarget{abstract}{%
+\section*{Abstract}\label{abstract}}
 \addcontentsline{toc}{section}{Abstract}
 
 In state-space stock assessment models, recruitment and numbers-at-age
@@ -211,7 +212,8 @@ recruitment, numbers-at-age transitions
 
 \pagebreak
 
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 State-space population models include random and fixed effects, where
 random effects represent random processes that are separable from
@@ -281,9 +283,11 @@ more details). Overall, the goal of this study is to provide guidance on
 bias-correction of log-normal random effects and observations in
 state-space assessment models.
 
-\section{Methods}\label{methods}
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
 
-\subsection{Overview}\label{overview}
+\hypertarget{overview}{%
+\subsection{Overview}\label{overview}}
 
 The Woods Hole Assessment Model (WHAM) is a state-space assessment model
 (\url{https://timjmiller.github.io/wham}) \citep{Stock2021}. WHAM can
@@ -293,7 +297,8 @@ catchability \citep{Stock2021}. WHAM is currently used to manage various
 stocks in the US northeast region. Below, we describe the population
 processes and observations where a log-normal distribution is assumed.
 
-\subsection{Population numbers-at-age}\label{population-numbers-at-age}
+\hypertarget{population-numbers-at-age}{%
+\subsection{Population numbers-at-age}\label{population-numbers-at-age}}
 
 The transitions between numbers-at-age are described as:
 
@@ -371,8 +376,9 @@ Therefore, a bias correction term can be applied here to ensure
 R_{y} = \bar{R}_{y} \cdot e^{\left(\epsilon_{y} - \frac{\sigma_{Rec}^2}{2}\right)}, \text{ with } \epsilon_y \sim \mathcal{N}(0, \sigma_{Rec}^2)
 \end{equation}
 
+\hypertarget{aggregate-catch-and-indices}{%
 \subsection{Aggregate catch and
-indices}\label{aggregate-catch-and-indices}
+indices}\label{aggregate-catch-and-indices}}
 
 Observed, annual, aggregate fishery catch is also assumed to be
 log-normally distributed:
@@ -383,14 +389,19 @@ log-normally distributed:
 
 where \(\hat{C}_{y}\) is the observed fleet catch in year \(y\),
 \({C}_{y}\) is the unobserved true catch, \(\sigma^2_{C_{y}}\) is an
-input variance for catch observation, and \(-\sigma^2_{C_{y}}/2\) is the
-bias correction term. Note that \(-\sigma^2_{C_{y}}/2\) is omitted from
-the Eq. 7 when bias correction is not applied.
+input variance for catch observation (fixed across years in our study),
+and \(-\sigma^2_{C_{y}}/2\) is the bias correction term. Note that
+\(-\sigma^2_{C_{y}}/2\) is omitted from the Eq. 7 when bias correction
+is not applied. With bias correction, the observation model is specified
+so that the mean equals the true catch (mean-unbiased); without bias
+correction, the observation model is specified so that the median equals
+the true catch (median-unbiased).
 
 Observations of annual aggregate indices of abundance are handled
 identically to the aggregate catch in Eq. 7.
 
-\subsection{Operating model}\label{operating-model}
+\hypertarget{operating-model}{%
+\subsection{Operating model}\label{operating-model}}
 
 For each stock, operating models (OMs) were constructed by fitting to
 real fishery and survey data and conditioning on parameter values
@@ -405,8 +416,9 @@ correction. Parameters for the random-effects processes in each OM are
 provided in Tables S1--S3, and fishery and survey configurations are
 summarized in \autoref{model_config_table}.
 
+\hypertarget{simulationestimation-experiment}{%
 \subsection{Simulation--estimation
-experiment}\label{simulationestimation-experiment}
+experiment}\label{simulationestimation-experiment}}
 
 The simulation experiment followed a full factorial design
 (\autoref{OM_scenario_table}). For each OM variant, fixed-effect
@@ -426,7 +438,8 @@ failed to converge were discarded, and additional iterations were run
 with new random seeds until 100 complete and converged simulation
 replicates were obtained for every scenario.
 
-\subsection{Performance metrics}\label{performance-metrics}
+\hypertarget{performance-metrics}{%
+\subsection{Performance metrics}\label{performance-metrics}}
 
 Model performance was evaluated by calculating the median relative error
 of recruitment, \(NAA\), and \(SSB\) over the model years. The relative
@@ -495,7 +508,8 @@ performance of the EM \(j\), we calculated the delta AIC (dAIC):
 The the proportions of EMs selected by AIC were also calculated to
 evaluate AIC's ability to identify the correctly specified model.
 
-\section{Results}\label{results}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 For OMs with only recruitment random effects, the patterns of self-tests
 and cross-tests were similar, regardless of whether the autocorrelation
@@ -531,8 +545,9 @@ SSPB) led to similar conclusions, for brevity, only the relative error
 results are presented in the main text. The results for the other
 metrics can be found in the supplementary materials (Figures S4--S12).
 
+\hypertarget{relative-error-of-recruitment}{%
 \subsection{Relative error of
-recruitment}\label{relative-error-of-recruitment}
+recruitment}\label{relative-error-of-recruitment}}
 
 For OMs with only recruitment random effects, the relative error in
 recruitment estimates was small across all test scenarios. However, when
@@ -551,8 +566,9 @@ The poor performance in the former case was corroborated by a greater
 magnitude of RMSR (\autoref{fig:supp_Rec_RMSR}), MdLQ
 (\autoref{fig:supp_Rec_MdLQ}), and SSPB (\autoref{fig:supp_Rec_SSPB}).
 
+\hypertarget{relative-error-of-ssb-and-naa}{%
 \subsection{\texorpdfstring{Relative error of \(SSB\) and
-\(NAA\)}{Relative error of SSB and NAA}}\label{relative-error-of-ssb-and-naa}
+\(NAA\)}{Relative error of SSB and NAA}}\label{relative-error-of-ssb-and-naa}}
 
 Estimates of \(SSB\) were accurate when the OM included only recruitment
 random effects. However, performance degraded in scenarios with both
@@ -573,8 +589,9 @@ error was mirrored in the estimates of \(NAA\)
 (\autoref{fig:supp_Median_NAA}, \autoref{fig:supp_NAA_RMSR},
 \autoref{fig:supp_NAA_MdLQ}, \autoref{fig:supp_NAA_SSPB})
 
+\hypertarget{relative-error-of-random-effects-parameters}{%
 \subsection{Relative error of random-effects
-parameters}\label{relative-error-of-random-effects-parameters}
+parameters}\label{relative-error-of-random-effects-parameters}}
 
 Recruitment standard deviation was accurately estimated, or slightly
 underestimated (\autoref{fig:Rec_sigma}). When both recruitment and
@@ -585,7 +602,8 @@ ranging between -30\% and -10\% (\autoref{fig:NAA_sigma}). Such
 consistent underestimation was also found for the AR(1)-year
 autocorrelation parameter (\autoref{fig:supp_ar1}).
 
-\subsection{AIC}\label{aic}
+\hypertarget{aic}{%
+\subsection{AIC}\label{aic}}
 
 Although the correctly specified EM was generally preferred based on
 AIC, the difference in AIC between the correct model and the
@@ -595,9 +613,11 @@ that dAIC \textgreater{} 2 represents a significant difference in model
 performance, AIC would most often not be useful for determining whether
 bias correction should be applied or not.
 
-\section{Discussion}\label{discussion}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
-\subsection{Log-normal random effects}\label{log-normal-random-effects}
+\hypertarget{log-normal-random-effects}{%
+\subsection{Log-normal random effects}\label{log-normal-random-effects}}
 
 Our results suggest that bias correction has minimal impact on the
 estimation of recruitment and \(SSB\) in state-space models when only
@@ -676,7 +696,8 @@ of key outputs. However, further research is needed to better understand
 how exactly this error in \(\sigma_{NAA}\) and other parameters
 propagates to error in recruitment and \(SSB\).
 
-\subsection{Log-normal observations}\label{log-normal-observations}
+\hypertarget{log-normal-observations}{%
+\subsection{Log-normal observations}\label{log-normal-observations}}
 
 In our study, the bias correction for log-normally distributed
 observations had a limited impact on derived population quantities, in
@@ -712,8 +733,9 @@ key factors, including: (1) the relative magnitudes of observation and
 process error, and (2) whether the observation error variance is fixed
 or freely estimated within the model.
 
+\hypertarget{implications-and-future-research-recommendations}{%
 \subsection{Implications and future research
-recommendations}\label{implications-and-future-research-recommendations}
+recommendations}\label{implications-and-future-research-recommendations}}
 
 Restricted maximum likelihood (REML) has been proposed as an improvement
 over marginal maximum likelihood estimation, as it provides an unbiased
@@ -768,19 +790,22 @@ absence of strong evidence in support of bias correction, we recommend
 excluding it, as it appears to have less downside risk in cases where
 supporting evidence is ambiguous.
 
-\section{Acknowledgements}\label{acknowledgements}
+\hypertarget{acknowledgements}{%
+\section{Acknowledgements}\label{acknowledgements}}
 
 We acknowledge the support provided by Saltwater Inc.~for facilitating
 Chengxue Li's contribution to this project.
 
+\hypertarget{competing-interests-statement}{%
 \section{Competing interests
-statement}\label{competing-interests-statement}
+statement}\label{competing-interests-statement}}
 
 One co-author, Timothy J. Miller, serves as a Guest Editor for CJFAS for
 this special issue.
 
+\hypertarget{credit-authorship-contribution-statement}{%
 \section{CRediT authorship contribution
-statement}\label{credit-authorship-contribution-statement}
+statement}\label{credit-authorship-contribution-statement}}
 
 \textbf{Chengxue Li:} Conceptualization, Methodology, Software, Writing
 - original draft, Formal analysis, Visualization.\\
@@ -793,23 +818,28 @@ editing.\\
 \textbf{Charles T. Perretti:} Conceptualization, Writing - review \&
 editing.
 
-\section{Funding statement}\label{funding-statement}
+\hypertarget{funding-statement}{%
+\section{Funding statement}\label{funding-statement}}
 
 This work was funded by NOAA Fisheries Northeast Fisheries Science
 Center.
 
-\section{Data availability statement}\label{data-availability-statement}
+\hypertarget{data-availability-statement}{%
+\section{Data availability
+statement}\label{data-availability-statement}}
 
 The data underlying this article are available on Github:
 \url{https://github.com/lichengxue/Bias_Correction_Project}.
 
-\section{Tables}\label{tables}
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
 
 \input{Revised_Figures&Tables/model_config_table.tex}
 
 \input{Revised_Figures&Tables/OM_scenario_table.tex}
 
-\section{Figures}\label{figures}
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
 
 \begin{figure}[H]
 \centering
@@ -846,7 +876,8 @@ The data underlying this article are available on Github:
 \label{fig:AIC_select}
 \end{figure}
 
-\section{Supplementary files}\label{supplementary-files}
+\hypertarget{supplementary-files}{%
+\section{Supplementary files}\label{supplementary-files}}
 
 \renewcommand{\thetable}{S\arabic{table}}
 \setcounter{table}{0}

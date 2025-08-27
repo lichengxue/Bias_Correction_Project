@@ -169,9 +169,9 @@ Observed, annual, aggregate fishery catch is also assumed to be log-normally dis
 \end{equation}
 ```
 
-where $\hat{C}_{y}$ is the observed fleet catch in year $y$, ${C}_{y}$ is the unobserved true catch, $\sigma^2_{C_{y}}$ is an input variance for catch observation, and $-\sigma^2_{C_{y}}/2$ is the bias correction term. Note that $-\sigma^2_{C_{y}}/2$ is omitted from the Eq. 7 when bias correction is not applied.
+where $\hat{C}_{y}$ is the observed fleet catch in year $y$, ${C}_{y}$ is the unobserved true catch, $\sigma^2_{C_{y}}$ is an input variance for catch observation (fixed across years in our study), and $-\sigma^2_{C_{y}}/2$ is the bias correction term. Note that $-\sigma^2_{C_{y}}/2$ is omitted from the Eq. 7 when bias correction is not applied. With bias correction, the observation model is specified so that the mean equals the true catch (mean-unbiased); without bias correction, the observation model is specified so that the median equals the true catch (median-unbiased).
 
-Observations of annual aggregate indices of abundance are handled identically to the aggregate catch in Eq. 7. 
+Observations of annual aggregate indices of abundance are handled identically to the aggregate catch in Eq. 7.
 
 ## Operating model
 
