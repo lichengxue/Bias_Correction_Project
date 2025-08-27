@@ -12,21 +12,26 @@ geometry: margin=1in
 
 \newpage
 
-# Cover Letter to the Associate Editor
+# *Cover Letter to the Associate Editor* {-}
 
 Dear Associate Editor,  
 
-We sincerely appreciate the time and effort that you and the reviewers have invested in evaluating our manuscript *“Evaluating the impact of log-normal bias-correction on a state-space stock assessment model” (CJFAS-2025-0093)*. We have carefully considered all comments and suggestions, and in this revised version we have addressed each point in detail.  
+We sincerely appreciate the time and effort that you and the reviewers have invested in evaluating our manuscript *“Evaluating the impact of log-normal bias-correction on a state-space stock assessment model” (CJFAS-2025-0093)*. We have carefully considered all comments and suggestions, and in this revised version we have addressed each point in detail. All the materials, including the original and revised versions of the manuscript, are available here: [https://github.com/lichengxue/Bias_Correction_Project](https://github.com/lichengxue/Bias_Correction_Project).  
 
 The major revisions include:  
+
 - Adding 50 additional replicates to address concerns about low sample size.  
-- Calculating and presenting additional performance metrics, all of which support our main conclusions.  
-- Revising and strengthening the **Methods** and **Discussion** sections based on reviewer feedback.  
+
+- Calculating and presenting additional performance metrics, all of which support our main conclusions. 
+
+- Revising and strengthening the **Methods** and **Discussion** sections based on reviewer feedback. 
+
 - Updating figures and tables, including several new supplementary figures to address specific concerns.  
 
 We believe these revisions have substantially improved the clarity, rigor, and overall quality of the manuscript. Thank you again for your thoughtful comments and guidance, which have been invaluable in strengthening this work.  
 
 Sincerely,  
+
 Li et al.  
 
 \newpage
