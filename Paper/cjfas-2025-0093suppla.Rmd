@@ -1,0 +1,253 @@
+---
+title: "Supplementary files: Evaluating the impact of log-normal bias-correction on a state-space stock assessment model"
+author:    
+  - Chengxue Li$^{1,2,3*}$
+  - Jonathan J. Deroba$^1$
+  - Timothy J. Miller$^1$
+  - Christopher M. Legault$^1$
+  - Charles T. Perretti$^1$
+date: ''
+fontsize: 12pt
+output:   
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    includes:
+      in_header:
+      - options.sty
+      - journalshortcuts.tex
+    latex_engine: xelatex
+    keep_tex: yes
+    number_sections: yes
+  html_document:
+    df_print: paged
+  word_document: default
+header-includes:
+  - \usepackage{float}
+  - \usepackage{amsmath}
+  - \usepackage{pdflscape}
+  - \usepackage{hyperref}
+  - \usepackage{xspace}
+  - \usepackage{bm}
+  - \usepackage{caption,graphics}
+  - \usepackage{graphicx}
+  - \usepackage{makecell}
+  - \usepackage{lineno}
+  - \linenumbers
+  - \renewcommand\figurename{Fig.}
+  - \captionsetup{labelsep=period, singlelinecheck=false}
+  - \newcommand{\changesize}[1]{\fontsize{#1pt}{#1pt}\selectfont}
+  - \renewcommand{\arraystretch}{1.5}
+  - \renewcommand\theadfont{}
+csl: canadian-journal-of-fisheries-and-aquatic-sciences.csl
+biblio-style: cjfas2.bst
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy=FALSE, tidy.opts=list(width.cutoff=60), warning = FALSE, message = FALSE, fig.align = "center")
+knitr::opts_knit$set(root.dir = '../' )
+library(knitr)
+library(tidyverse)
+library(pander)
+library(kableExtra)
+library(png)
+library(forcats)
+```
+$^1$ Northeast Fisheries Science Center, Woods Hole Laboratory, 166 Water Street, Woods Hole, MA 02543 USA  
+
+$^2$ School of Marine and Atmospheric Sciences, Stony Brook University, 
+Stony Brook, NY 11794, USA  
+
+$^3$ Saltwater Inc., 733 N Street, Anchorage, AK 99501 USA 
+
+$^*$Corresponding author: chengxue.li@noaa.gov  
+
+\vspace{0.5cm}
+\textbf{ORCIDs:}   
+Chengxue Li: \href{https://orcid.org/0000-0001-7518-7234}{0000-0001-7518-7234},  
+Tim J. Miller: \href{https://orcid.org/0000-0003-1411-1206}{0000-0003-1411-1206},  
+Christopher M. Legault: \href{https://orcid.org/0000-0002-0328-1376}{0000-0002-0328-1376},  
+Charles T. Perretti: \href{https://orcid.org/0000-0002-4316-3630}{0000-0002-4316-3630}.  
+
+\pagebreak
+
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+
+\begin{table}[H]
+    \centering
+    \caption{Parameters associated with random effects processes used for Georges Bank (GB) yellowtail flounder.}
+    \label{supp_flounder_table}
+    \input{Revised_Figures&Tables/Flounder_tab.tex}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Parameters associated with random effects processes used for Gulf of Maine (GoM) haddock.}
+    \label{supp_haddock_table}
+    \input{Revised_Figures&Tables/Haddock_tab.tex}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Parameters associated with random effects processes used for Atlantic mackerel.}
+    \label{supp_mackerel_table}
+    \input{Revised_Figures&Tables/Mackerel_tab.tex}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Convergence rates of misspecified models across different stocks.}
+    \label{supp_convergence_tab}
+    \input{Revised_Figures&Tables/convergence_tab.tex}
+\end{table}
+
+\renewcommand{\thetable}{\arabic{table}}
+
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/OM_EM_Comparison_Plot_Rec.PNG}
+\caption{Median relative error of recruitment calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+\label{fig:supp_OM_EM_Comparison_Plot_Rec}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/OM_EM_Comparison_Plot_SSB.PNG}
+\caption{Median relative error of $SSB$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+\label{fig:supp_OM_EM_Comparison_Plot_SSB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Median_NAA.PNG}
+    \caption{Median relative error of $NAA$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_Median_NAA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/RMSR_Rec.PNG}
+    \caption{Root mean squared relative error (RMSR) of recruitment calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_Rec_RMSR}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/RMSR_SSB.PNG}
+    \caption{Root mean squared relative error (RMSR) of $SSB$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_SSB_RMSR}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/RMSR_NAA.PNG}
+    \caption{Root mean squared relative error (RMSR) of $NAA$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_NAA_RMSR}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/MdLQ_Rec.PNG}
+    \caption{Median log-quotient (MdLQ) of recruitment calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_Rec_MdLQ}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/MdLQ_SSB.PNG}
+    \caption{Median log-quotient (MdLQ) of $SSB$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_SSB_MdLQ}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/MdLQ_NAA.PNG}
+    \caption{Median log-quotient (MdLQ) of $NAA$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_NAA_MdLQ}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Median_Rec_SSPB.PNG}
+    \caption{Median symmetric signed percentage bias (SSPB) of recruitment calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_Rec_SSPB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Median_SSB_SSPB.PNG}
+    \caption{Median symmetric signed percentage bias (SSPB) of $SSB$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_SSB_SSPB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Median_NAA_SSPB.PNG}
+    \caption{Median symmetric signed percentage bias (SSPB) of $NAA$ calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_NAA_SSPB}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/Rho.PNG}
+\caption{Relative error of AR(1)-year coefficient calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+\label{fig:supp_ar1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/dAIC.PNG}
+    \caption{dAIC calculated for self-tests and cross-tests. ``Rec RE'' and ``Rec+NAA RE'' in the top facet indicate operating models (OMs) with only recruitment random effects and both recruitment and $NAA$ random effects, respectively.}
+    \label{fig:supp_dAIC}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Correlation_plot_NAA_iid.PNG}
+    \caption{Correlation plot for the OM with both recruitment and $NAA$ treated as IID random effects. The correlations were calculated from self-tests, where the EM had the same bias correction as the operating model (OM). Correlations in \textbf{bold} indicate statistically significant values (p-value < 0.05).}
+    \label{fig:supp_Cor_NAA_iid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Revised_Figures&Tables/Correlation_plot_NAA_iid_mismatch.PNG}
+    \caption{Correlation plot for the OM with both recruitment and $NAA$ treated as IID random effects. The correlations were calculated from cross-tests, where the EM had a different bias correction than the operating model (OM). Correlations in \textbf{bold} indicate statistically significant values (p-value < 0.05).}
+    \label{fig:supp_Cor_NAA_iid_mis}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/Recruitment_low_cross_RE.PNG}
+\caption{Relative errors of recruitment estimates summarized from 50 realizations for each scenario. Two operating models (OMs) (with bias correction applied or omitted for both processes and observations) for Gulf of Maine (GoM) haddock with both recruitment and $NAA$ IID random effects (see Table S2) were used to conduct simulation-estimation experiments. The study evaluated the effects of recruitment variability ($\sigma_{Rec}$ = 0.5, 1, 1.5) and $NAA$ variability ($\sigma_{NAA}$ = 0.1, 0.2, ... 0.6) in a factorial design through self-tests and cross-tests. To isolate the impact of observation error, the coefficient of variation (CV) for observations was set to 0.05.}
+\label{fig:supp_Recruitment_low_cross_RE}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/SSB_low_cross_RE.PNG}
+\caption{Relative errors of $SSB$ estimates summarized from 50 realizations for each scenario. Two operating models (OMs) (with bias correction applied or omitted for both processes and observations) for Gulf of Maine (GoM) haddock with both recruitment and $NAA$ IID random effects (see Table S2) were used to conduct simulation-estimation experiments. The study evaluated the effects of recruitment variability ($\sigma_{Rec}$ = 0.5, 1, 1.5) and $NAA$ variability ($\sigma_{NAA}$ = 0.1, 0.2, ... 0.6) in a factorial design through self-tests and cross-tests. To isolate the impact of observation error, the coefficient of variation (CV) for observations was set to 0.05.}
+\label{fig:supp_SSB_low_cross_RE} 
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/Rec_intermediate.PNG}
+\caption{Median relative error of recruitment in the intermediate period (with first and last 10 years of estimates removed).}
+\label{fig:supp_Rec_intermediate}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Revised_Figures&Tables/SSB_intermediate.PNG}
+\caption{Median relative error of $SSB$ in the intermediate period (with first and last 10 years of estimates removed).}
+\label{fig:supp_SSB_intermediate}
+\end{figure}
+
+\renewcommand{\thefigure}{\arabic{figure}}

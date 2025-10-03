@@ -67,11 +67,15 @@ $^3$ Saltwater Inc., 733 N Street, Anchorage, AK 99501 USA
 $^*$Corresponding author: chengxue.li@noaa.gov  
 
 \vspace{0.5cm}
-\textbf{ORCIDs:}   
-Chengxue Li: \href{https://orcid.org/0000-0001-7518-7234}{0000-0001-7518-7234},  
-Tim J. Miller: \href{https://orcid.org/0000-0003-1411-1206}{0000-0003-1411-1206},  
-Christopher M. Legault: \href{https://orcid.org/0000-0002-0328-1376}{0000-0002-0328-1376},  
-Charles T. Perretti: \href{https://orcid.org/0000-0002-4316-3630}{0000-0002-4316-3630}.  
+\textbf{ORCID:}   
+
+Chengxue Li: \href{https://orcid.org/0000-0001-7518-7234}{0000-0001-7518-7234}  
+
+Tim J. Miller: \href{https://orcid.org/0000-0003-1411-1206}{0000-0003-1411-1206}  
+
+Christopher M. Legault: \href{https://orcid.org/0000-0002-0328-1376}{0000-0002-0328-1376}   
+
+Charles T. Perretti: \href{https://orcid.org/0000-0002-4316-3630}{0000-0002-4316-3630}     
 
 \pagebreak
 
@@ -327,7 +331,10 @@ This work was funded by NOAA Fisheries Northeast Fisheries Science Center.
 
 # Data availability statement 
 
-The data underlying this article are available on Github: https://github.com/lichengxue/Bias_Correction_Project.
+The data and code underlying this article are available on 
+[https://github.com/lichengxue/Bias_Correction_Project](https://github.com/lichengxue/Bias_Correction_Project), 
+and have been archived at 
+[DOI: 10.5281/zenodo.17253797](https://doi.org/10.5281/zenodo.17253797).
 
 # Tables 
 
